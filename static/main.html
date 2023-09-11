@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أقرأ</title>
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/Font-Awesome/css/all.css" rel="stylesheet">
+
+  <link href="style/spinner.css" rel="stylesheet">
+  <link href="style/style.css" rel="stylesheet">
+  <link href="style/sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Main Top progress-bar -->
+  <div id="progress-bar_">
+
+  </div>
+  <!-- Side -->
+  <div id="side" class="d-flex flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+      <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        style="position: relative;left: 70px;">
+        <span style="font-weight: bold;font-family:arbic_text;letter-spacing: 2px;" class="fs-4">أقرأ</span>
+        <i style="font-size: 32px;margin-left: 20px; margin-right: 20px;line-height: 1.3em;"
+          class="fa-solid fa-book-open-reader"></i>
+      </div>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <div class="nav-link active" aria-current="page"
+            style="font-family:arbic_text; font-size: 32px;cursor: default;">
+            <i style="font-size: 18px; margin-left: 50px;" class="fa-solid fa-house"></i>
+            الرئيسية
+          </div>
+        </li>
+        <li>
+          <div class="nav-link link-body-emphasis" aria-current="page"
+            style="font-family:arbic_text; font-size: 32px;cursor: default;">
+            <i style="font-size: 18px; margin-left: 50px;" class="fa-regular fa-newspaper"></i>
+            الأخبار
+          </div>
+        </li>
+        <li>
+          <a class="nav-link link-body-emphasis" aria-current="page"
+            style="font-family:arbic_text; font-size: 32px;cursor: default;">
+            <i style="font-size: 18px; margin-left: 50px;" class="fa-solid fa-shop"></i>
+            المتجر
+          </a>
+        </li>
+        <li>
+          <a class="nav-link link-body-emphasis" aria-current="page"
+            style="font-family:arbic_text; font-size: 32px;cursor: default;">
+            <i style="font-size: 18px; margin-left: 50px;" class="fa-regular fa-note-sticky"></i>
+            الملاحظات
+          </a>
+        </li>
+        <li>
+          <div class="nav-link link-body-emphasis" aria-current="page"
+            style="font-family:arbic_text; font-size: 32px;cursor: default;">
+            <i style="font-size: 18px; margin-left: 50px;" class="fa-brands fa-readme"></i>
+            القارئ الإلكتروني
+          </div>
+        </li>
+      </ul>
+      <hr>
+      <div class="dropdown" style="direction: rtl;padding-left: 70px">
+        <img src="https://github.com/mdo.png" id="main-window-profile" alt="" width="32" height="32"
+          class="rounded-circle me-2 float-start">
+        <a class="d-flex align-items-center link-body-emphasis text-decoration-none float-start"
+          data-bs-toggle="dropdown" style="font-family: arbic_text;">
+          <strong id="main-window-username"></strong>
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          <li>
+            <div class="setting_bt dropdown-item" style="text-align: right;">
+              <i class="fa-solid fa-moon"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              تغيير المظهر
+            </div>
+          </li>
+          <li><a class="setting_bt dropdown-item" style="text-align: right;">
+              <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              اﻹعدادات
+            </a></li>
+          <li><a class="setting_bt dropdown-item" style="text-align: right;" href="#">
+              <i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              الحساب
+            </a></li>
+          <li><a class="dropdown-item" style="text-align: right;" href="#">
+              <i class="fa-solid fa-circle-dollar-to-slot"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+              دعم
+            </a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="setting_bt dropdown-item" style="text-align: center;" href="#">تسجبل الخروج</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Main -->
+  <div id="main">
+    <!--Section: home-->
+    <div id="top">
+      <div id="top-options">
+        <nav class="blog-pagination" aria-label="Pagination">
+          <div class="top-option-bt btn btn-outline-primary ms-1 active">
+            قرأت&nbsp;&nbsp;
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <div class="top-option-bt btn btn-outline-primary ms-1">
+            أريد قراءته&nbsp;&nbsp;
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="top-option-bt btn btn-outline-primary ms-1">
+            اﻷفضل&nbsp;&nbsp;
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="top-option-bt btn btn-outline-primary ms-1">
+            الترشيحات&nbsp;&nbsp;
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="main_view row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"></div>
+    <!--Section: Newsfeed-->
+    <div style="display: none;" class="main_view news-card card" style="max-width: 42rem">
+    </div>
+    <!--Section: store-->
+    <div style="display: none;" class="main_view container col-xxl-8 px-4 py-5">
+      <!--Section: Main Top-Seller title-->
+      <div id="top-sell_main" class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="book_card col-10 col-sm-8 col-lg-6">
+          <img id="top-sell_main_img" src="" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+            height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">الأكثر مبيعاً</h1>
+          <hr>
+          <div class="products-content">
+            <h3 class="fs-5 author-name">تأليف:
+              <span id="top-sell_main_author"></span>
+            </h3>
+            <h3 class="item-title" id="top-sell_main_title"></h3>
+            <p id="top-sell_main_about"></p>
+            <div class="fw-bold item-price">
+              <span id="top-sell_main_price" style="font-size: 22px;"></span>
+              جم
+              <button id="top-sell_main_purchase" type="button"
+                class="book_purchase_bt btn btn-primary justify-content-top float-start" data-path="">شراء</button>
+            </div>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <!--Section: Mnior Top-Seller titles-->
+      <div class="row" id="top-sell_minor"></div>
+    </div>
+    <!--Section: notes-->
+    <div style="display: none;" class="main_view note-card card" style="max-width: 42rem">
+      <nav class="blog-pagination" aria-label="Pagination" id="note-options">
+        <div class="note-option-bt note-option-add btn btn-outline-primary ms-1">
+          إضافة&nbsp;
+          <i class="fa-solid fa-square-plus"></i>
+        </div>
+        <div class="note-option-bt btn btn-outline-primary ms-1 active" style="margin-right: 200px;">
+          عرض قائمة&nbsp;&nbsp;
+          <i class="fa-solid fa-list-ul"></i>
+        </div>
+        <div class="note-option-bt btn btn-outline-primary ms-1">
+          عرض شبكي&nbsp;&nbsp;
+          <i class="fa-solid fa-table-cells-large"></i>
+        </div>
+      </nav>
+    </div>
+    <!--Section: reader-->
+    <div style="display: none;" class="main_view container  bg-body rounded shadow-sm">
+      <h4 class="border-bottom pb-2 mb-0">فتح مؤخراً</h4>
+      <div id="readerView"></div>
+    </div>
+    <!--Section: Books Section View-->
+    <div style="display: none;" class="main_view container"></div>
+    <!--Section: book view-->
+    <div style="display: none;" class="book_view container">
+      <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+        <img id="book_view_cover" src="" class="float-start" title="book cover" height="150px" width="150px"
+          style="border-radius: 7.5px;">
+        <a class="book_purchase_bt btn btn-outline-warning rounded-pill btn-sm active" id="book_view_purchaseBt"
+          href="#">شراء&nbsp;
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+        <div class="col-md-6 px-0">
+          <p class="lead my-3" id="book_view_title"></p>
+          <p class="small my-3" id="book_view_pagesCount"></p>
+          <p class="small my-3" id="book_view_pubDate"></p>
+          <p class="small my-3" id="book_view_rating"></p>
+          <div class="book_options">
+            <nav class="blog-pagination" aria-label="Pagination">
+              <a class="read_bt btn btn-outline-primary rounded-pill" id="book_view_readBt">
+                قرأت&nbsp;
+                <i class="fa-solid fa-book-medical"></i>
+              </a>
+              <a class="wantread_bt btn btn-outline-primary rounded-pill" id="book_view_wantreadBt">تريد
+                قراءته&nbsp;
+                <i class="fa-solid fa-heart"></i>
+              </a>
+              <a class="btn btn-outline-primary rounded-pill" id="book_view_readNowBt">
+                قراءه&nbsp;
+                <i class="fa-brands fa-readme"></i>
+              </a>
+              <a class="btn btn-outline-primary rounded-pill" id="book_view_noteBt">
+                تعليق&nbsp;
+                <i class="fa-regular fa-note-sticky"></i>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-6" style="width: 600px;">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">المؤلف</strong>
+              <h3 class="mb-0" id="authorName"></h3>
+              <div class="mb-1 text-body-secondary" id="authorBirth"></div>
+              <p class="card-text mb-auto" id="authorInfo"></p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img id="authorProfile" src="#" width="200" height="250">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+
+          <article class="blog-post" id="book_viewAbout"></article>
+
+          <nav class="blog-pagination" aria-label="Pagination">
+            <a class="book_tag_bt btn btn-outline-primary rounded-pill" data-path=""></a>
+            <a class="book_tag_bt btn btn-outline-primary rounded-pill" data-path=""></a>
+            <a class="book_tag_bt btn btn-outline-primary rounded-pill" data-path=""></a>
+            <a class="book_tag_bt btn btn-outline-primary rounded-pill" data-path=""></a>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Current and Search -->
+  <div id="panel" class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary rounded">
+    <div id="panel_current"></div>
+    <div class="panel-search">
+      <div class="panel-search-input input-group mb-3">
+        <input id="panel-search-input_box" type="text" class="form-control" aria-label="Text input with dropdown button"
+          placeholder="البحث عن كتاب">
+        <div class="input-group-prepend">
+          <span class="input-group-text btn-primary" id="basic-addon1">
+            <i style="font-size: 24px;" class="fa-brands fa-searchengin"></i>
+          </span>
+        </div>
+      </div>
+      <div id="panel-search-results" style="height: 100%; display: none;">
+        <div class="loader book" id="Search-spinner">
+          <figure class="page"></figure>
+          <figure class="page"></figure>
+          <figure class="page"></figure>
+        </div>
+        <p style="text-align: center;" id="Search-spinner_">انتظر من فضلك</p>
+        <!-- Search results -->
+      </div>
+    </div>
+    <div id="panel-status" class="rounded">
+      <div class="panel-status_" id="panel-date"></div>
+    </div>
+  </div>
+  <script type="module" src="backend/mainView.js"></script>
+  <script src="backend/sidebar.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/Font-Awesome/css/all.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin-top: 20px;
+            color: #1a202c;
+            text-align: left;
+            background-color: #e2e8f0;
+        }
+
+        .main-body {
+            padding: 15px;
+        }
+
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 0 solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem;
+        }
+
+        .gutters-sm {
+            margin-right: -8px;
+            margin-left: -8px;
+        }
+
+        .gutters-sm>.col,
+        .gutters-sm>[class*=col-] {
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+
+        .mb-3,
+        .my-3 {
+            margin-bottom: 1rem !important;
+        }
+
+        .bg-gray-300 {
+            background-color: #e2e8f0;
+        }
+
+        .h-100 {
+            height: 100% !important;
+        }
+        .col-sm-9{
+            text-align: right;
+        }
+        .shadow-none {
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-body">
+            <div class="row gutters-sm">
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img id="profile-img" src="https://github.com/mdo.png" alt="Admin"
+                                    width="200" height="200px" style="border-radius: 50%;">
+                                <div class="mt-3">
+                                    <h4 id="profile-name">name</h4>
+                                    <p id="profile-job" class="text-secondary mb-1">job</p>
+                                    <p id="profile-location" class="text-muted font-size-sm">location</p>
+                                    <p id="profile-birth" class="text-muted font-size-sm">date of birth</p>
+                              <!--
+                                  <button class="btn btn-primary">Follow</button>
+                                  <button class="btn btn-outline-primary">Message</button>
+                                -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0">
+                                    <i class="fa-brands fa-google"></i>
+                                    Google
+                                </h6>
+                                <span class="text-secondary" id="profile-google">gmail.com@</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0">
+                                    <i class="fa-brands fa-goodreads-g"></i>
+                                    Goodreads
+                                </h6>
+                                <span class="text-secondary" id="profile-goodreads">bootdey</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                <h6 class="mb-0">
+                                    <i class="fa-solid fa-tablet-screen-button"></i>
+                                    Kindle
+                                </h6>
+                                <span class="text-secondary" id="profile-kindle">kindle.com@</span>
+                            </li>
+ 
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">الاسم الكامل</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary" id="profile-fullname">
+                                    name
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">اسم المستخدم</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary" id="profile-username">
+                                    name
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">الحساب</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary" id="profile-account">
+                                    username@gmail.com
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">الجوال</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary" id="profile-phone">
+                                    (002) 12-1576332
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">العنوان</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary" id="profile-location-">
+                                    location
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <a class="btn btn-info" id="editBtn"
+                                        href="#">تعديل</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <a class="btn btn-info" id="saveBtn" style="display: none;"
+                                        href="#">حفظ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row gutters-sm">
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body" id="profile-interests">
+                                    <h3 class="d-flex mb-3">الإهتمامات</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body" id="profile-favourite">
+                                    <h3 class="d-flex mb-3">نوعية الكتب المفضلة</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="backend/profile.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

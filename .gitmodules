@@ -1,0 +1,6 @@
+[submodule "epubjs-reader"]
+	path = assetd/epubjs-reader
+	url = https://github.com/futurepress/epubjs-reader
+[submodule "assets/Font-Awesome"]
+	path = assets/Font-Awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git

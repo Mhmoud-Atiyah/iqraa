@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>النوتة</title>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- include summernote css/js -->
+    <link href="../node_modules/summernote/dist/summernote.min.css" rel="stylesheet">
+    <script src="../node_modules/summernote/dist/summernote.min.js"></script>
+    <script src="../node_modules/summernote/dist/lang/summernote-ar-AR.js"></script>
+    <style>
+        @font-face {
+            font-family: 'arbic';
+            src: url('style/Old\ Antic\ Decorative.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'arbic_text';
+            src: url('style/arabic_text.ttf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Arslan';
+            src: url('style/Arslan\ Wessam.ttf') format('truetype');
+        }
+
+        body {
+            padding: 10px;
+        }
+
+        #top {
+            display: block;
+            width: 100%;
+            padding: 10px 20px 10px 0px;
+            position: fixed;
+            z-index: 1;
+            background-color: white;
+            top: 0px;
+            right: 10px;
+        }
+
+        #main {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            top: 0px;
+            right: 10px;
+            padding-top: 70px;
+            height: 100%;
+            width: 100%;
+        }
+
+        #_textArea_ {
+            display: block;
+            position: relative;
+            right: 2px;
+            height: 100%;
+            outline: none;
+            padding: 15px;
+            /* Default value */
+            font-family: Arslan;
+            font-size: 26px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="summernote"></div>
+    <script src="backend/note.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            var saveBt = function (context) {
+                var ui = $.summernote.ui;
+                // create button
+                var button = ui.button({
+                    contents: '<i class="fa fa-child"/>حفظ',
+                    tooltip: 'حفظ الملاحظة',
+                    click: function () {
+                        //TODO: do whatever you need
+                        let text_TEXT = document.getElementsByClassName("note-editable")[0].innerText;
+                        let text_HTML = document.getElementsByClassName("note-editable")[0].innerHTML;
+                        let dataToSend = {
+                            id: "7119070",
+                            data: [
+                                text_TEXT,
+                                text_HTML
+                            ]
+                        }
+                        getData(`writeNote/${JSON.stringify(dataToSend)}`).then(() => {
+                            console.log("Data Sent Successfuly");
+                        });
+                    }
+                });
+                return button.render();   // return button as jquery object
+            }
+            $('#summernote').summernote({
+                buttons: {
+                    save: saveBt
+                },
+                icons: {
+                    save: "<svg height=\"24\" version=\"1.1\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:cc=\"http://creativecommons.org/ns#\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"><g transform=\"translate(0 -1028.4)\"><path d=\"m3 1037.4v2 2 6c0 1.1 0.8954 2 2 2h14c1.105 0 2-0.9 2-2v-6-2-2h-18z\" fill=\"#2980b9\"/><path d=\"m5 3c-1.1046 0-2 0.8954-2 2v2 2 1 2 6c0 1.105 0.8954 2 2 2h14c1.105 0 2-0.895 2-2v-6-2-1-2-1l-3-3h-1-2-10z\" fill=\"#3498db\" transform=\"translate(0 1028.4)\"/><path d=\"m6 3v1 1 2c0 1.1046 0.8954 2 2 2h1 4 2 1c1.105 0 2-0.8954 2-2v-1.8438-0.1562-1-1h-12z\" fill=\"#2980b9\" transform=\"translate(0 1028.4)\"/><path d=\"m8 1041.4c-1.1046 0-2 0.9-2 2v1.8 3.2h12v-3.2-1.8c0-1.1-0.895-2-2-2h-3-5z\" fill=\"#ecf0f1\"/><rect fill=\"#bdc3c7\" height=\"1\" width=\"12\" x=\"6\" y=\"1048.4\"/><path d=\"m7 1031.4v1 2c0 1.1 0.8954 2 2 2h1 4 1c1.105 0 2-0.9 2-2v-1.9-0.1-1h-10z\" fill=\"#ecf0f1\"/><path d=\"m8 4v2c0 0.5523 0.4477 1 1 1h1 1c0.552 0 1-0.4477 1-1v-2h-2-2z\" fill=\"#95a5a6\" transform=\"translate(0 1028.4)\"/><g fill=\"#bdc3c7\"><rect height=\"1\" transform=\"translate(0 1028.4)\" width=\"8\" x=\"8\" y=\"15\"/><rect height=\"1\" width=\"8\" x=\"8\" y=\"1045.4\"/><rect height=\"1\" width=\"4\" x=\"8\" y=\"1031.4\"/></g></g></svg>"
+                },
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['Misc', ['undo', 'redo', 'save']],
+                    ['fontsize', ['fontname', 'fontsize']],
+                    ['style', ['bold', 'italic', 'underline', 'strikethrough', 'clear']],
+                    ['height', ['height']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+                spellCheck: false,
+                height: 300,                 // set editor height
+                minHeight: null,             // set minimum height of editor
+                maxHeight: null,             // set maximum height of editor
+                focus: true,                  // set focus to editable area after initializing summernote
+                lang: 'ar-AR' // default: 'en-US'
+
+            });
+            $('#summernote').summernote('fullscreen.toggle');
+            $('#summernote').summernote('fontSize', 20);
+        });
+    </script>
+</body>
+
+</html>

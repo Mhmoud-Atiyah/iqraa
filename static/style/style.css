@@ -1,0 +1,133 @@
+:root {
+    --App-bgColor: grey;
+    --App-bgColor-Second: rgba(249, 249, 252, 255);
+    --Icon-Color: rgb(31, 41, 56);
+    --Icon-Hover: rgb(0, 122, 255);
+    --Icon-Active: rgb(0, 122, 255);
+    --bt-color: rgb(95, 103, 112);
+    --Text-header-Color: rgb(0, 122, 255);
+    --Text-Color: #222;
+    --PPM-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #1f2938;
+    border-radius: 10%;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--Icon-Color);
+    display: none;
+}
+
+@font-face {
+    font-family: 'arbic';
+    src: url('Old\ Antic\ Decorative.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'arbic_text';
+    src: url('arabic_text.ttf') format('truetype');
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--Text-Color);
+}
+
+input {
+    border: none;
+    outline: none;
+    text-indent: 10px;
+    color: rgb(119, 119, 119);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: inherit;
+}
+
+.fas {
+    color: var(--Icon-Color);
+}
+
+#progress-bar_ {
+    width: 100%;
+    position: absolute;
+    right: 280px;
+}
+
+#top-options,
+#note-options {
+    position: fixed;
+    top: 20px;
+    right: 280px;
+    z-index: 1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5%;
+    width: 100%;
+    height: 45px;
+}
+
+#main {
+    display: block;
+    position: fixed;
+    top: 60px;
+    right: 280px;
+    padding: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.card-text {
+    overflow-y: scroll;
+    height: 80px;
+}
+#book_view_purchaseBt{
+    position: absolute;
+    top: 180px;
+    left: 120px;
+}
+#panel {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 30px;
+    left: 10px;
+    width: 350px;
+}
+
+#panel-search-results {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 10px;
+    display: block;
+    overflow: scroll;
+}
+#panel-status{
+    display: inline-block;
+    height: 20px;
+    width: 350px;
+    position: fixed;
+    z-index: 1;
+    bottom: 15px;
+    left: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    cursor: default;
+    user-select: none;
+}
