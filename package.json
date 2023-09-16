@@ -28,6 +28,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "epubjs": "^0.3.93",
     "font-awesome": "^4.7.0",
+    "googleapis": "^126.0.1",
     "jquery": "^3.7.1",
     "summernote": "^0.8.20"
   }

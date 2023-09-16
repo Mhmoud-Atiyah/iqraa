@@ -7,59 +7,57 @@ const socialBt = document.getElementsByClassName("social-btn");
 const max = 1000; // maximum number of users
 const min = 1;// minimum number of users
 
-var user_Data = [
-    {
-        "id": "",
-        "account": {
-            "username": "",
-            "accountName": "",
-            "profile": "",
-            "password": ""
-        },
-        "user": {
-            "firstName": "",
-            "lasttName": "",
-            "dateOfbirth_day": "",
-            "dateOfbirth_month": "",
-            "dateOfbirth_year": "",
-            "gender": "",
-            "language": "",
-            "about": "",
-            "interests": [],
-            "booksWanted": [],
-        },
-        "location": {
-            "City": "",
-            "State": "",
-            "Country": ""
-        },
-        "connection": {
-            "google": "",
-            "goodreads": "",
-            "kindle": "",
-            "Number": 0,
-        },
-        "privacy": {
+var user_Data =
+{
+    "id": "",
+    "account": {
+        "username": "",
+        "accountName": "",
+        "profile": "",
+        "password": ""
+    },
+    "user": {
+        "firstName": "",
+        "lasttName": "",
+        "dateOfbirth_day": "",
+        "dateOfbirth_month": "",
+        "dateOfbirth_year": "",
+        "gender": "",
+        "about": "",
+        "interests": [],
+        "favouriteBooks": [],
+    },
+    "location": {
+        "City": "",
+        "State": "",
+        "Country": ""
+    },
+    "connection": {
+        "google": "",
+        "goodreads": "",
+        "kindle": "",
+        "Number": 0,
+    },
+    "privacy": {
 
-        },
-        "purchase": {
+    },
+    "purchase": {
 
-        },
-        "booksData": {
-            "read": {
+    },
+    "booksData": {
+        "read": {
 
-            }
         }
-
     }
-];
+
+};
 var user_Config = {
-    "darkMode": 0,
+    "darkMode": false,
+    "status": true,
     "language": "",
     "booksReadNr": "",
     "booksNrYear": ""
-}
-    ;
+};
 // help function
 function getSelectValues(select) {
     var selected = [];
@@ -78,7 +76,6 @@ window.onload = () => {
             let location = data["location"];
             let genres = data["genres"];
             let interests = data["interests"];
-
             Object.keys(location).forEach(country => {
                 let opt = document.createElement("option");
                 opt.innerText = country;
@@ -139,7 +136,7 @@ document.getElementById("login-window").addEventListener('click', async () => {
         || controlBt[1].value === "" // lastName
         || controlBt[2].value === "" // username
         || controlBt[3].value === "" // profile
-        || controlBt[5].value === "" // password
+        || controlBt[4].value === "" // password
         || selectBt[0].value === "" // day
         || selectBt[1].value === "" // month
         || selectBt[2].value === "" // year
@@ -148,69 +145,69 @@ document.getElementById("login-window").addEventListener('click', async () => {
         window.alert("\nاملاء البيانات المطلوبة أولاً \n")
         return;
     }
-    user_Data[0].id = `${Math.floor(Math.random() * (max - min) + min)}`;
+    user_Data.id = `${Math.floor(Math.random() * (max - min) + min)}`;
     // first name
-    user_Data[0].user.firstName = controlBt[0].value;
+    user_Data.user.firstName = controlBt[0].value;
     // last name
-    user_Data[0].user.lasttName = controlBt[1].value;
+    user_Data.user.lasttName = controlBt[1].value;
     // day
-    user_Data[0].user.dateOfbirth_day = selectBt[0].value;
+    user_Data.user.dateOfbirth_day = selectBt[0].value;
     // month
-    user_Data[0].user.dateOfbirth_month = selectBt[1].value;
+    user_Data.user.dateOfbirth_month = selectBt[1].value;
     // year
-    user_Data[0].user.dateOfbirth_year = selectBt[2].value;
+    user_Data.user.dateOfbirth_year = selectBt[2].value;
     // gender
-    user_Data[0].user.gender = selectBt[3].value;
+    user_Data.user.gender = selectBt[3].value;
     // username
-    user_Data[0].account.username = controlBt[2].value;
+    user_Data.account.username = controlBt[2].value;
     // profile
-    user_Data[0].account.profile = controlBt[3].files[0].path;
+    user_Data.account.profile = controlBt[3].files[0].path;
     // account
     if (controlBt[6].value === "") {
-        user_Data[0].account.accountName = controlBt[2].value + "@iqraa.com";
+        user_Data.account.accountName = controlBt[2].value + "@iqraa.com";
     } else {
-        user_Data[0].account.accountName = controlBt[6].value;
+        user_Data.account.accountName = controlBt[6].value;
     }
     // password
-    user_Data[0].account.password = controlBt[5].value;
+    user_Data.account.password = controlBt[4].value;
     /**
      * connections
     */
     // google
-    //user_Data[0].connection.google = socialBt[1].value;
-    user_Data[0].connection.google = "Future!";
+    //user_Data.connection.google = socialBt[1].value;
+    user_Data.connection.google = "Future!";
     // goodreads
-    //user_Data[0].connection.goodreads = socialBt[0].value;
-    user_Data[0].connection.goodreads = "Future!";
+    //user_Data.connection.goodreads = socialBt[0].value;
+    user_Data.connection.goodreads = "Future!";
     // kindle
-    //user_Data[0].connection.kindle = socialBt[2].value;
-    user_Data[0].connection.kindle = "Future!";
+    //user_Data.connection.kindle = socialBt[2].value;
+    user_Data.connection.kindle = "Future!";
     // phone
-    user_Data[0].connection.Number = controlBt[7].value;
+    user_Data.connection.Number = "Future!";
     /**
      * location
     */
     // Country
-    user_Data[0].location.Country = selectBt[4].value;
+    user_Data.location.Country = selectBt[4].value;
     // State
-    user_Data[0].location.State = selectBt[5].value;
+    user_Data.location.State = selectBt[5].value;
     // about
-    user_Data[0].user.about = controlBt[8].value;
+    user_Data.user.about = controlBt[8].value;
     // favourite genres
-    user_Data[0].user.booksWanted = getSelectValues(selectBt[6]);
+    user_Data.user.favouriteBooks = getSelectValues(selectBt[6]);
     // interests
-    user_Data[0].user.interests = getSelectValues(selectBt[7]);
+    user_Data.user.interests = getSelectValues(selectBt[7]);
 
     // purchase options ==> Future Plan!
 
     // Dark Mode Option
-    user_Config[0].darkMode = configSwitch[0].checked;
+    user_Config.darkMode = configSwitch[0].checked;
+    // status Option
+    user_Config.status = configSwitch[1].checked;
     // Language Option
-    user_Config[0].language = selectBt[8].value;
-    // booksReadNr option
-    user_Config[0].booksReadNr = controlBt[10].value;
+    user_Config.language = selectBt[8].value;
     // booksNrYear option
-    user_Config[0].booksNrYear = controlBt[9].value;
+    user_Config.booksNrYear = controlBt[9].value;
 
     let data = [user_Data, user_Config];
     const CloseWindow = await window.installInterface.closeWindow(data);

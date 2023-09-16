@@ -7,6 +7,7 @@ const { spawn } = require('node:child_process');
 const fs = require('fs');
 var http = require('http');
 const { log } = require('console');
+const { escape } = require('querystring');
 //---------------------------------------------------------
 // Some Constants and variables
 //---------------------------------------------------------
@@ -23,7 +24,7 @@ const user_Data_file = iqraa_home_dir + 'user.json';
 const user_Config_file = iqraa_home_dir + 'config.json';
 const Reader_file = iqraa_home_dir + 'reader.json';
 const bookTable = cache_books_dir + 'table.json';
-const NoteTable = notes_dir + 'tablquery_seede.json';
+const NoteTable = notes_dir + 'table.json';
 //---------------------------------------------------------
 const iqraa_Binary = 'assets/htmlEngine/build/iqraa';
 //---------------------------------------------------------
@@ -33,7 +34,11 @@ const iqraa_Binary = 'assets/htmlEngine/build/iqraa';
 //---------------------------------------------------------
 // True if it's first time
 function isItfirstTime(path) {
-  (!fs.existsSync(path)) ? true : false;
+  if (!fs.existsSync(path)) {
+    return true;
+  } else {
+    false;
+  }
 };
 //---------------------------------------------------------
 // FS Node Module related Functions
@@ -402,7 +407,7 @@ function initIqraa() {
                 "lastOpen": []
               }), 'utf8', (err) => {
                 if (err) throw err;
-                console.log(`File: ${bookTable} created successfully`);
+                console.log(`File: ${Reader_file} created successfully`);
               });
             };
           });
@@ -419,7 +424,7 @@ function initIqraa() {
               "1999": "My Notes"
             }), 'utf8', (err) => {
               if (err) throw err;
-              console.log(`File: ${bookTable} created successfully`);
+              console.log(`File: ${NoteTable} created successfully`);
             });
             //TODO: Add Note Cover To setting Data
             fs.readFileAsync(user_Data_file).then((_seed) => {

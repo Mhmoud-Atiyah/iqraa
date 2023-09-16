@@ -205,8 +205,8 @@ window.onload = () => {
     }, 60000);
     // load Data
     getData("user").then(data => {
-        document.getElementById("main-window-profile").src = data[0].account["profile"];
-        document.getElementById("main-window-username").innerText = data[0].account["username"];
+        document.getElementById("main-window-profile").src = data.account["profile"];
+        document.getElementById("main-window-username").innerText = data.account["username"];
     });
     getData("config").then(data => {
         // Progress Bar Setting
@@ -224,14 +224,20 @@ window.onload = () => {
             <div class="progress"
             role="progressbar">
         <div class="progress-bar bg-fail"
-        style="width: ${((data.booksReadNr / data.booksNrYear) * 100)}%">
-        قرأت ${data.booksReadNr} من ${data.booksNrYear} كتاب</div>
+        style="width: ${((data.booksReadNr / data.booksNrYear) * 100)}%; font-size: 16px">
+        قرأت ${convertToArabicNumeral(data.booksReadNr)} من ${convertToArabicNumeral(data.booksNrYear)} كتاب</div>
         </div>`;
         }
         document.getElementById("progress-bar_").innerHTML = progress;
         // Dark Mode Setting
         if (data.darkMode) {
             document.querySelector("body").setAttribute('data-bs-theme', "dark");
+        }
+        // Status bar
+        if (data.status) {
+            document.getElementById("panel-date").style.display = " "
+        } else {
+            document.getElementById("panel-date").style.display = "none"
         }
     });
     getData("bookList").then(data => {
@@ -408,7 +414,7 @@ function CurrentBookBlock(elem, bookData) {
     <div class="panel-progress">
       <div class="progress" role="progressbar" aria-label="Reading progress" aria-valuenow="25" aria-valuemin="0"
         aria-valuemax="100">
-        <div class="progress-bar bg-fail" style="width: ${66}%">قرأت %${66}</div>
+        <div class="progress-bar bg-fail" style="width: ${66}%">قرأت %${convertToArabicNumeral(66)}</div>
       </div>
     </div>
     <div class="panel-current container">
@@ -417,7 +423,7 @@ function CurrentBookBlock(elem, bookData) {
         <div class="panel-current-data col pt-4">
           <p>${bookData.title}</p>
           <p>${bookData.author.name}</p>
-          <p>${bookData.rating}</p>
+          <p>${convertToArabicNumeral(bookData.rating)}</p>
         </div>
       </div>
     </div>

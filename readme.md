@@ -1,9 +1,10 @@
 <div dir="rtl">
 
+## ! العمل بالمشروع متوقف حتى أجد بديل أو API جيد للتعامل مع Goodreads
 ## اقرأ (قيد التطوير)
- مساعد قارئ تفاعلي متعدد المنصات مخصص للاستخدام لمحترفي القراءة العرب
+ مساعد قارئ تفاعلي متعدد المنصات مخصص للاستخدام لمحبي القراءة العرب
 
-<img src = "img/Screenshot.png" style = "margin-left: 10٪">
+<img src = "assets/img/Screenshot.png" style = "margin-left: 10٪">
 
 ## المميزات
 
@@ -47,22 +48,12 @@
 - لا داعي لإستخدام كثير من التطبيقات لإتمام عملية شراء الكتب فالان تستطيع بضغطة زر واحد شراء ما تريد. ( الشراء حاليا يتم من خلال موفر الكتب وليس التطبيق )
 </div>
 
-# جاري العمل ...
-<div dir="rtl">
-- البريد لمشاركة التجربة الخاص بك مع الأصدقاء.
-</div>
 
-## تثبيت اقرأ
-يمكنك الحصول على إصدارات جاهزة من اقرأ لأنظمة 
-[Linux](https://github.com/Mhmoud-Atiyah/Iqraa/releases/Linux/) - 
-[Mac](https://github.com/Mhmoud-Atiyah/Iqraa/releases/Mac) - 
-[Windows](https://github.com/Mhmoud-Atiyah/Iqraa/releases/windows/)
-
-# يمكنك تثبيته يدوياً
+### طريقة التثبيت
 
 أولاً، قم بتثبيت [NodeJS](https://nodejs.org/en/download/)
 ثم قم بتنزيل الكود إلى المكان الذي ترغب فيه باستخدام الأمر التالي:
-```
+```bash
 git clone https://github.com/Mhmoud-Atiyah/Iqraa.git
 cd Iqraa
 git submodule init
@@ -98,16 +89,9 @@ npm run-script build
 أرحب بطلبات السحب (Pull Requests). يُرجى فتح مشكلة (Issue) أولًا لمناقشة أي تغييرات ترغب في إجرائها.
 يرجى التأكد من تحديث الاختبارات حسب الاقتضاء.
 
-## المكاتب المستخدمة
-```    
-"fontawesome": الأيقونات
-"bootstrap": إطارات جاهزة
-"epubjs":  للتعامل مع ملفات الكتب
-"trix": نافذة النوتة
-```
 ## تواصل
 يُمكنك التواصل معي في أي وقت عبر البريد الإلكتروني:
-[pyramido](mahmoudaboattia1999@gmail.com)
+[MhmoudAtiyah](mahmoudaboattia1999@gmail.com)
 
 ## الترخيص
 حقوق التأليف والنشر (c) Pyramido. كل الحقوق محفوظة.
